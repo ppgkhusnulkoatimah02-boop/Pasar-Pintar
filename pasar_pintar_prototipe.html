@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pasar Pintar | Kenali Struktur Pasar</title>
+<style>
+:root{--navy:#183153;--blue:#2f6fed;--sky:#eaf2ff;--mint:#dff7ed;--yellow:#ffd66b;--ink:#203047;--muted:#64748b;--white:#fff;--bg:#f6f8fc;--border:#e4eaf2}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+header{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10}
+.nav{max-width:1100px;margin:auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-weight:800;color:var(--navy);font-size:1.1rem}.brand span{color:var(--blue)}
+nav{display:flex;gap:8px;flex-wrap:wrap}
+nav button{border:0;background:transparent;color:var(--muted);font-weight:700;padding:9px 12px;border-radius:10px;cursor:pointer}
+nav button:hover,nav button.active{background:var(--sky);color:var(--blue)}
+main{max-width:1100px;margin:auto;padding:26px 22px 60px}
+section.page{display:none}section.page.active{display:block}
+.hero{background:linear-gradient(135deg,#183153,#2f6fed);border-radius:26px;padding:48px 38px;color:white;display:grid;grid-template-columns:1.4fr .8fr;gap:20px;align-items:center;overflow:hidden}
+.hero h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.12;margin:12px 0}
+.hero p{color:#e8efff;max-width:580px}
+.tag{display:inline-block;background:#ffffff25;border:1px solid #ffffff35;padding:6px 12px;border-radius:30px;font-size:.85rem}
+.hero-art{font-size:clamp(5rem,13vw,9rem);text-align:center;filter:drop-shadow(0 8px 6px #0002)}
+.btn{border:0;border-radius:12px;padding:12px 18px;font-weight:800;cursor:pointer;background:var(--blue);color:white;display:inline-block;text-decoration:none}
+.btn.light{background:white;color:var(--navy)}.btn.yellow{background:var(--yellow);color:var(--navy)}
+.btn.secondary{background:var(--sky);color:var(--blue)}
+.section-title{margin:30px 0 8px;font-size:1.65rem;color:var(--navy)}
+.lead{color:var(--muted);margin-top:0}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.card{background:white;border:1px solid var(--border);border-radius:18px;padding:22px;box-shadow:0 4px 18px #18315308}
+.card h3{margin:5px 0 8px;color:var(--navy)}.emoji{font-size:2rem}
+.badge{display:inline-block;background:var(--mint);color:#13704d;border-radius:20px;padding:4px 10px;font-size:.8rem;font-weight:700}
+.content-box{background:white;border:1px solid var(--border);padding:24px;border-radius:18px;margin-top:16px}
+ul{padding-left:22px}.muted{color:var(--muted)}
+.choice-list{display:grid;gap:10px;margin:18px 0}
+.choice{padding:13px 15px;border:1px solid var(--border);background:white;border-radius:12px;text-align:left;cursor:pointer;font-weight:600;color:var(--ink)}
+.choice:hover{border-color:var(--blue);background:var(--sky)}
+.choice.correct{border-color:#16a34a;background:#e9f9ef}.choice.wrong{border-color:#dc2626;background:#fff0f0}
+.feedback{font-weight:700;margin:12px 0;min-height:26px}
+.progress{height:9px;background:#e8edf5;border-radius:20px;overflow:hidden;margin:12px 0}
+.progress div{height:100%;background:var(--blue);width:0;transition:width .3s}
+footer{text-align:center;color:var(--muted);padding:25px 10px;border-top:1px solid var(--border)}
+.small{font-size:.9rem}.pill-row{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+@media(max-width:700px){.nav{align-items:flex-start;flex-direction:column}.hero{grid-template-columns:1fr;padding:30px 24px}.hero-art{display:none}.grid{grid-template-columns:1fr}main{padding:18px 14px 45px}nav button{padding:8px 9px}}
+</style>
+</head>
+<body>
+<header>
+<div class="nav">
+<div class="brand">🛍️ Pasar <span>Pintar</span></div>
+<nav aria-label="Navigasi utama">
+<button class="active" data-page="home">Beranda</button>
+<button data-page="materi">Materi</button>
+<button data-page="kasus">Studi Kasus</button>
+<button data-page="game">Tebak Pasar</button>
+<button data-page="kuis">Kuis</button>
+<button data-page="ai">Asisten AI</button>
+</nav>
+</div>
+</header>
+<main>
+<section class="page active" id="home">
+<div class="hero">
+<div>
+<span class="tag">Belajar Ekonomi jadi lebih seru</span>
+<h1>Kenali Struktur Pasar, <br>Mulai dari Sekarang!</h1>
+<p>Jelajahi berbagai jenis pasar, pahami cirinya, dan uji pengetahuanmu melalui permainan serta kuis interaktif.</p>
+<button class="btn yellow" onclick="showPage('materi')">Mulai Belajar →</button>
+</div>
+<div class="hero-art" aria-hidden="true">🛒📊</div>
+</div>
+<h2 class="section-title">Apa yang akan kamu pelajari?</h2>
+<p class="lead">Empat struktur pasar yang sering kita temui dalam kegiatan ekonomi.</p>
+<div class="grid">
+<div class="card"><div class="emoji">🥬</div><h3>Persaingan Sempurna</h3><p>Banyak penjual dan pembeli, produk homogen, serta harga mengikuti pasar.</p></div>
+<div class="card"><div class="emoji">🏢</div><h3>Monopoli</h3><p>Satu penjual menguasai pasar dan memiliki hambatan masuk yang tinggi.</p></div>
+<div class="card"><div class="emoji">🏭</div><h3>Oligopoli</h3><p>Pasar dikuasai beberapa perusahaan besar yang saling memperhatikan keputusan pesaing.</p></div>
+<div class="card"><div class="emoji">🧁</div><h3>Persaingan Monopolistik</h3><p>Banyak penjual menawarkan produk sejenis dengan ciri atau diferensiasi masing-masing.</p></div>
+</div>
+<div class="content-box"><h3>🎯 Tujuan Pembelajaran</h3><ul><li>Menjelaskan karakteristik struktur pasar.</li><li>Membedakan empat jenis struktur pasar.</li><li>Mengidentifikasi contoh struktur pasar dalam kehidupan sehari-hari.</li><li>Menerapkan pemahaman melalui game dan kuis.</li></ul></div>
+</section>
+
+<section class="page" id="materi">
+<h1 class="section-title">📚 Materi Struktur Pasar</h1><p class="lead">Pahami konsep, ciri-ciri, dan contoh dari masing-masing struktur pasar.</p>
+<div class="grid">
+<div class="card"><span class="badge">1</span><h3>Pasar Persaingan Sempurna</h3><p>Pasar dengan banyak penjual dan pembeli, produk yang relatif sama, serta tidak ada pihak yang dapat menentukan harga sendiri.</p><b>Ciri-ciri:</b><ul><li>Penjual dan pembeli sangat banyak.</li><li>Produk homogen.</li><li>Informasi pasar relatif terbuka.</li><li>Penjual bertindak sebagai penerima harga (price taker).</li><li>Relatif mudah masuk dan keluar pasar.</li></ul><b>Contoh:</b> pasar komoditas pertanian yang mendekati kondisi persaingan sempurna.</div>
+<div class="card"><span class="badge">2</span><h3>Pasar Monopoli</h3><p>Pasar yang hanya memiliki satu penjual atau produsen utama untuk suatu barang/jasa dan tidak memiliki pesaing dekat.</p><b>Ciri-ciri:</b><ul><li>Satu penjual dominan.</li><li>Hambatan masuk pasar tinggi.</li><li>Memiliki kekuatan menentukan harga, dengan tetap memperhatikan permintaan dan regulasi.</li><li>Produk tidak memiliki pengganti dekat.</li></ul><b>Contoh:</b> layanan tertentu yang dikelola satu penyedia di wilayah tertentu karena infrastruktur atau regulasi.</div>
+<div class="card"><span class="badge">3</span><h3>Pasar Oligopoli</h3><p>Pasar yang dikuasai beberapa perusahaan besar sehingga keputusan satu perusahaan dapat memengaruhi perusahaan lainnya.</p><b>Ciri-ciri:</b><ul><li>Jumlah penjual relatif sedikit.</li><li>Perusahaan saling bergantung.</li><li>Hambatan masuk cukup tinggi.</li><li>Persaingan dapat melalui harga, promosi, dan inovasi.</li></ul><b>Contoh:</b> industri operator telekomunikasi atau industri kendaraan bermotor.</div>
+<div class="card"><span class="badge">4</span><h3>Pasar Persaingan Monopolistik</h3><p>Pasar dengan banyak penjual yang menawarkan produk sejenis tetapi memiliki perbedaan merek, kualitas, rasa, desain, atau pelayanan.</p><b>Ciri-ciri:</b><ul><li>Penjual relatif banyak.</li><li>Produk terdiferensiasi.</li><li>Persaingan melalui kualitas, merek, dan promosi.</li><li>Relatif mudah masuk dan keluar pasar.</li></ul><b>Contoh:</b> kedai kopi, restoran, atau usaha pakaian.</div>
+</div>
+<div class="content-box"><h3>💡 Ingat!</h3><p>Perbedaan utama struktur pasar dapat dilihat dari <b>jumlah penjual, karakteristik produk, hambatan masuk pasar, dan kemampuan menentukan harga</b>.</div>
+</section>
+
+<section class="page" id="kasus">
+<h1 class="section-title">🔎 Studi Kasus</h1><p class="lead">Coba identifikasi struktur pasar dari situasi berikut.</p>
+<div class="content-box"><h3>Kasus 1 — Pasar Sayur</h3><p>Di sebuah pasar tradisional, banyak petani menjual sayuran dengan kualitas yang relatif sama. Pembeli dapat memilih dari banyak penjual dan harga dipengaruhi kondisi pasar.</p><p><b>Pertanyaan:</b> Struktur pasar apa yang paling mendekati situasi tersebut?</p><p class="badge">Jawaban: Persaingan sempurna (mendekati)</p></div>
+<div class="content-box"><h3>Kasus 2 — Layanan Infrastruktur</h3><p>Suatu layanan jaringan di wilayah tertentu hanya dapat disediakan oleh satu perusahaan karena membutuhkan infrastruktur besar dan izin khusus.</p><p><b>Pertanyaan:</b> Struktur pasar apa yang dapat menggambarkan situasi tersebut?</p><p class="badge">Jawaban: Monopoli (dalam konteks wilayah/layanan tersebut)</p></div>
+<div class="content-box"><h3>Kasus 3 — Industri Kendaraan</h3><p>Beberapa perusahaan besar menawarkan kendaraan. Mereka memantau strategi harga, fitur, dan promosi pesaing sebelum mengambil keputusan.</p><p><b>Pertanyaan:</b> Struktur pasar apa yang paling sesuai?</p><p class="badge">Jawaban: Oligopoli</p></div>
+<div class="content-box"><h3>Kasus 4 — Kedai Kopi</h3><p>Di satu kawasan terdapat banyak kedai kopi. Masing-masing memiliki menu, suasana, merek, dan harga yang berbeda untuk menarik pelanggan.</p><p><b>Pertanyaan:</b> Struktur pasar apa yang paling sesuai?</p><p class="badge">Jawaban: Persaingan monopolistik</p></div>
+</section>
+
+<section class="page" id="game">
+<h1 class="section-title">🎮 Game Tebak Pasar</h1><p class="lead">Baca situasinya, lalu pilih struktur pasar yang tepat. Kumpulkan poin!</p>
+<div class="content-box">
+<div id="gameCounter" class="badge">Soal 1</div><div class="progress"><div id="gameProgress"></div></div>
+<h3 id="gameQuestion"></h3><div id="gameChoices" class="choice-list"></div><div id="gameFeedback" class="feedback"></div>
+<button class="btn" id="gameNext" style="display:none">Soal Berikutnya →</button><div id="gameResult"></div>
+</div>
+</section>
+
+<section class="page" id="kuis">
+<h1 class="section-title">📝 Kuis Evaluasi</h1><p class="lead">Jawab pertanyaan untuk mengetahui pemahamanmu.</p>
+<div class="content-box">
+<div id="quizCounter" class="badge">Soal 1 dari 5</div><div class="progress"><div id="quizProgress"></div></div>
+<h3 id="quizQuestion"></h3><div id="quizChoices" class="choice-list"></div><div id="quizFeedback" class="feedback"></div>
+<button class="btn" id="quizNext" style="display:none">Lanjut →</button><div id="quizResult"></div>
+</div>
+</section>
+
+<section class="page" id="ai">
+<h1 class="section-title">🤖 Asisten Belajar AI</h1><p class="lead">Gunakan Gemini untuk bertanya dan memperdalam pemahamanmu tentang struktur pasar.</p>
+<div class="content-box"><h3>Contoh pertanyaan</h3><ul><li>Apa perbedaan monopoli dan oligopoli?</li><li>Berikan contoh persaingan monopolistik di sekitar saya.</li><li>Jelaskan struktur pasar dengan bahasa yang sederhana.</li><li>Buatkan latihan soal tentang struktur pasar.</li></ul>
+<p>Tekan tombol di bawah untuk membuka Gemini. Salin pertanyaan yang ingin kamu ajukan.</p>
+<a class="btn" href="https://gemini.google.com/" target="_blank" rel="noopener">Buka Gemini ↗</a>
+<p class="small muted">Catatan: fitur ini membuka layanan Gemini di tab baru. AI merupakan pendamping belajar; periksa kembali informasi yang diberikan.</p></div>
+</section>
+</main>
+<footer>Pasar Pintar • Media Pembelajaran Ekonomi • Karya Digital Koding dan AI</footer>
+<script>
+function showPage(page){document.querySelectorAll('section.page').forEach(s=>s.classList.remove('active'));document.getElementById(page).classList.add('active');document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===page));window.scrollTo({top:0,behavior:'smooth'});}
+document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
+
+const gameData=[
+{q:"Banyak petani menjual beras dengan kualitas serupa. Tidak ada satu penjual yang mampu menentukan harga pasar.",a:["Monopoli","Oligopoli","Persaingan sempurna","Persaingan monopolistik"],c:2,why:"Banyak penjual, produk relatif homogen, dan harga mengikuti pasar."},
+{q:"Sebuah layanan di wilayah tertentu hanya memiliki satu penyedia karena hambatan infrastruktur yang sangat besar.",a:["Monopoli","Oligopoli","Persaingan sempurna","Persaingan monopolistik"],c:0,why:"Satu penyedia dan hambatan masuk tinggi merupakan karakteristik monopoli."},
+{q:"Beberapa perusahaan besar di industri telekomunikasi saling memperhatikan harga dan promosi pesaing.",a:["Monopoli","Oligopoli","Persaingan sempurna","Persaingan monopolistik"],c:1,why:"Jumlah perusahaan relatif sedikit dan keputusan mereka saling memengaruhi."},
+{q:"Banyak kedai roti menawarkan produk sejenis dengan rasa, merek, dan desain berbeda.",a:["Monopoli","Oligopoli","Persaingan sempurna","Persaingan monopolistik"],c:3,why:"Banyak penjual dengan produk terdiferensiasi merupakan persaingan monopolistik."}
+];
+let gi=0,gs=0,gameLocked=false;
+function loadGame(){if(gi>=gameData.length){document.getElementById('gameQuestion').textContent="Permainan selesai!";document.getElementById('gameChoices').innerHTML="";document.getElementById('gameFeedback').textContent="";document.getElementById('gameNext').style.display="none";document.getElementById('gameResult').innerHTML=`<h3>Skor kamu: ${gs}/${gameData.length}</h3><button class="btn secondary" onclick="restartGame()">Main Lagi</button>`;return}
+gameLocked=false;const d=gameData[gi];document.getElementById('gameCounter').textContent=`Soal ${gi+1} dari ${gameData.length}`;document.getElementById('gameProgress').style.width=`${gi/gameData.length*100}%`;document.getElementById('gameQuestion').textContent=d.q;document.getElementById('gameFeedback').textContent="";document.getElementById('gameNext').style.display="none";document.getElementById('gameResult').innerHTML="";document.getElementById('gameChoices').innerHTML=d.a.map((x,i)=>`<button class="choice" onclick="answerGame(${i})">${x}</button>`).join("")}
+function answerGame(i){if(gameLocked)return;gameLocked=true;const d=gameData[gi];document.querySelectorAll('#gameChoices .choice').forEach((b,j)=>{if(j===d.c)b.classList.add('correct');else if(j===i)b.classList.add('wrong');b.disabled=true});if(i===d.c)gs++;document.getElementById('gameFeedback').textContent=(i===d.c?"Benar! 🎉 ":"Belum tepat. 💡 ")+d.why;document.getElementById('gameNext').style.display="inline-block"}
+document.getElementById('gameNext').onclick=()=>{gi++;loadGame()};function restartGame(){gi=0;gs=0;loadGame()}loadGame();
+
+const quizData=[
+{q:"Ciri utama pasar persaingan sempurna adalah…",a:["Satu penjual menguasai pasar","Banyak penjual dengan produk homogen","Hanya beberapa perusahaan besar","Produk memiliki banyak merek berbeda"],c:1,why:"Persaingan sempurna memiliki banyak penjual dan produk homogen."},
+{q:"Pasar yang hanya memiliki satu penjual utama disebut…",a:["Oligopoli","Monopolistik","Monopoli","Persaingan sempurna"],c:2,why:"Monopoli ditandai oleh satu penjual dan hambatan masuk tinggi."},
+{q:"Dalam pasar oligopoli, perusahaan biasanya…",a:["Tidak memedulikan pesaing","Saling memperhatikan keputusan pesaing","Menjual produk yang selalu sama","Tidak melakukan promosi"],c:1,why:"Keputusan perusahaan oligopoli saling memengaruhi."},
+{q:"Contoh persaingan monopolistik adalah…",a:["Banyak kedai kopi dengan ciri berbeda","Satu penyedia layanan tunggal","Petani menjual produk homogen","Satu perusahaan tanpa pesaing"],c:0,why:"Kedai kopi memiliki banyak penjual dengan diferensiasi produk."},
+{q:"Salah satu hambatan masuk pasar monopoli adalah…",a:["Produk homogen","Biaya infrastruktur yang sangat besar","Banyak pembeli","Promosi sederhana"],c:1,why:"Infrastruktur, teknologi, atau regulasi dapat menjadi hambatan masuk."}
+];
+let qi=0,qscore=0,qlocked=false;
+function loadQuiz(){if(qi>=quizData.length){document.getElementById('quizQuestion').textContent="Kuis selesai!";document.getElementById('quizChoices').innerHTML="";document.getElementById('quizFeedback').textContent="";document.getElementById('quizNext').style.display="none";let percent=Math.round(qscore/quizData.length*100);document.getElementById('quizResult').innerHTML=`<h3>Nilai kamu: ${percent}</h3><p>${percent>=80?"Hebat! Kamu sudah memahami materi.":percent>=60?"Bagus! Pelajari kembali bagian yang belum dikuasai.":"Yuk, baca materi lagi lalu coba kembali."}</p><button class="btn secondary" onclick="restartQuiz()">Ulangi Kuis</button>`;document.getElementById('quizProgress').style.width="100%";return}
+qlocked=false;const d=quizData[qi];document.getElementById('quizCounter').textContent=`Soal ${qi+1} dari ${quizData.length}`;document.getElementById('quizProgress').style.width=`${qi/quizData.length*100}%`;document.getElementById('quizQuestion').textContent=d.q;document.getElementById('quizChoices').innerHTML=d.a.map((x,i)=>`<button class="choice" onclick="answerQuiz(${i})">${x}</button>`).join("");document.getElementById('quizFeedback').textContent="";document.getElementById('quizNext').style.display="none";document.getElementById('quizResult').innerHTML=""}
+function answerQuiz(i){if(qlocked)return;qlocked=true;const d=quizData[qi];document.querySelectorAll('#quizChoices .choice').forEach((b,j)=>{if(j===d.c)b.classList.add('correct');else if(j===i)b.classList.add('wrong');b.disabled=true});if(i===d.c)qscore++;document.getElementById('quizFeedback').textContent=(i===d.c?"Benar! 🎉 ":"Belum tepat. 💡 ")+d.why;document.getElementById('quizNext').style.display="inline-block"}
+document.getElementById('quizNext').onclick=()=>{qi++;loadQuiz()};function restartQuiz(){qi=0;qscore=0;loadQuiz()}loadQuiz();
+</script>
+</body>
+</html>
